@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Escolar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="pagina">
+        <section class="aplicativo" aria-labelledby="titulo">
+            <header class="cabecalho">
+                <div class="icone-urna" aria-hidden="true">✓</div>
+                <div>
+                    <p class="etiqueta">PARTICIPAÇÃO ESTUDANTIL</p>
+                    <h1 id="titulo">Urna Escolar</h1>
+                </div>
+            </header>
+
+            <p class="descricao">Uma simulação escolar inspirada na urna eletrônica.</p>
+
+            <section id="etapaIdentificacao" class="identificacao">
+                <h2>Identificação do aluno</h2>
+                <form id="formIdentificacao">
+                    <label for="nomeAluno">Nome do aluno</label>
+                    <input
+                        id="nomeAluno"
+                        name="nomeAluno"
+                        type="text"
+                        placeholder="Digite seu nome completo"
+                        autocomplete="name"
+                        maxlength="100"
+                        required
+                    >
+                    <button class="botao-continuar" type="submit">Iniciar votação <span aria-hidden="true">→</span></button>
+                </form>
+            </section>
+
+            <section id="etapaVotacao" class="etapa-votacao" hidden>
+                <div class="urna" aria-label="Urna eletrônica escolar">
+                    <div class="tela-urna">
+                        <div class="cabecalho-tela">
+                            <span>JUSTIÇA ELEITORAL</span>
+                            <span>VOTAÇÃO</span>
+                        </div>
+                        <div class="conteudo-tela">
+                            <p class="instrucao-tela">SEU VOTO PARA</p>
+                            <h2>Área de estudo</h2>
+                            <label class="sr-only" for="numeroChapa">Número da opção escolhida</label>
+                            <input id="numeroChapa" class="numero-digitado" type="text" readonly aria-label="Número selecionado">
+                            <p id="opcaoSelecionada" class="opcao-selecionada">Digite o número da opção</p>
+                            <p class="dica-tela">Confira a opção e pressione CONFIRMA.</p>
+                        </div>
+                        <div class="legenda-opcoes" aria-label="Opções de votação">
+                            <span>1 Lógica</span>
+                            <span>2 POO</span>
+                            <span>3 Web</span>
+                            <span>4 Sistemas</span>
+                            <span>5 Arquitetura</span>
+                            <span>6 Robótica</span>
+                            <span>7 Gestão</span>
+                            <span>8 HTML/CSS</span>
+                        </div>
+                    </div>
+
+                    <form id="formUrna" class="teclado" aria-label="Teclado da urna">
+                        <div class="teclas-numericas">
+                            <button type="button" class="tecla-numero" data-numero="1" aria-label="Número 1">1</button>
+                            <button type="button" class="tecla-numero" data-numero="2" aria-label="Número 2">2</button>
+                            <button type="button" class="tecla-numero" data-numero="3" aria-label="Número 3">3</button>
+                            <button type="button" class="tecla-numero" data-numero="4" aria-label="Número 4">4</button>
+                            <button type="button" class="tecla-numero" data-numero="5" aria-label="Número 5">5</button>
+                            <button type="button" class="tecla-numero" data-numero="6" aria-label="Número 6">6</button>
+                            <button type="button" class="tecla-numero" data-numero="7" aria-label="Número 7">7</button>
+                            <button type="button" class="tecla-numero" data-numero="8" aria-label="Número 8">8</button>
+                            <button type="button" class="tecla-numero tecla-zero" data-numero="0" aria-label="Número 0">0</button>
+                        </div>
+                        <div class="teclas-acao">
+                            <button type="button" class="tecla-branco" data-acao="branco">BRANCO</button>
+                            <button type="button" class="tecla-corrige" data-acao="corrige">CORRIGE</button>
+                            <button type="submit" class="tecla-confirma">CONFIRMA</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <p id="mensagem" role="status" aria-live="polite"></p>
+
+            <section id="resultado" class="resultado" hidden>
+                <h2>Resultado parcial</h2>
+                <p>1 - Lógica de Programação: <span id="votos1">0</span></p>
+                <p>2 - POO (Java): <span id="votos2">0</span></p>
+                <p>3 - Programação Web: <span id="votos3">0</span></p>
+                <p>4 - Sistemas Operacionais: <span id="votos4">0</span></p>
+                <p>5 - Arquitetura e Manutenção: <span id="votos5">0</span></p>
+                <p>6 - Noções de Robótica: <span id="votos6">0</span></p>
+                <p>7 - Gestão do Tempo: <span id="votos7">0</span></p>
+                <p>8 - HTML e CSS: <span id="votos8">0</span></p>
+                <p>Votos em branco: <span id="votosBrancos">0</span></p>
+                <h3>Total de votos: <span id="totalVotos">0</span></h3>
+            </section>
+            <p class="rodape">Seu voto é importante. Participe!</p>
+        </section>
+    </main>
+</body>
+</html>
